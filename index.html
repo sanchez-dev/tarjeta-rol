@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tarjeta de rol de José Sánchez</title>
+<meta name="description" content="Líder de Producto y Experiencia: qué hace, cómo entrega su trabajo y qué no le corresponde.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400&family=Spline+Sans+Mono:ital,wght@0,400;0,700;1,600;1,700&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --navy:#030c24;
+  --cream:#fcffe1;
+  --lime:#f7ffae;
+  --page:#f3f1f1;
+  --stone:#e4e1e1;
+  --slate:#dedede;
+  --white:#ffffff;
+  --mono:"Spline Sans Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --sans:"Manrope", "Helvetica Neue", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--page);color:var(--navy);font-family:var(--mono);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+p{margin:0}
+
+.hoja{max-width:1024px;margin:0 auto;padding-block:24px;padding-inline:24px;display:flex;flex-direction:column;gap:16px}
+
+/* títulos de sección */
+.titulo{font-weight:600;font-style:italic;font-size:28px;line-height:1.2}
+.bajada{font-size:16px;line-height:1.45;opacity:.8}
+.icono{width:20px;height:20px}
+
+/* ── encabezado ── */
+.cabecera{padding:24px 32px 0}
+.nombre-bloque{position:relative}
+.nombre{font-weight:700;font-style:italic;font-size:clamp(56px,11.3vw,115px);line-height:.968;letter-spacing:.06em;margin:0}
+.nombre span{display:block}
+.cargo{font-family:var(--sans);font-size:28px;letter-spacing:.04em;position:absolute;left:35.77%;top:59px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding-top:28px;list-style:none;margin:0;padding-left:0}
+.chip{border:1px solid var(--navy);border-radius:99px;padding:6px 14px;font-size:14px}
+.chip b{font-weight:700}
+
+/* ── misión ── */
+.tarjeta{background:var(--white);border-radius:16px;padding:24px}
+.mision{display:flex;flex-direction:column;gap:8px}
+.mision .texto{font-size:18px;line-height:1.5}
+.raya{width:142px;border-top:1px solid #000}
+
+/* ── atributos ── */
+.atributos{display:flex;background:var(--navy);border-radius:16px;overflow:hidden}
+.foto{position:relative;flex:0 0 293px;border-radius:16px;overflow:hidden;padding:24px;color:var(--cream);
+  background:linear-gradient(136deg,#4fa3aa 8%,#acdee3 102%)}
+.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.foto .rotulo{position:relative;display:flex;flex-direction:column;gap:8px}
+.foto .titulo{font-size:24px;line-height:normal}
+.foto .bajada{font-size:14px;opacity:1}
+.lista-atributos{flex:1;display:flex;flex-direction:column;gap:1px;min-width:0}
+.atributo{background:var(--cream);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.atributo p{font-size:16px;line-height:1.5}
+
+/* ── la jugada ── */
+.jugada{background:var(--lime);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:20px}
+.jugada-cab{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.jugada-cab .separador{width:1px;height:34px;background:#000}
+.jugada .intro{font-size:18px;line-height:1.45;max-width:70ch}
+.momentos{display:flex;align-items:stretch;gap:4px}
+.flecha{flex:0 0 28px;align-self:center;width:28px;height:28px}
+.momento{flex:1 1 0;min-width:0;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:8px;line-height:1.45}
+.momento .num{font-weight:700;font-style:italic;font-size:28px;line-height:1.1}
+.momento .nombre-m{font-weight:700;font-size:16px}
+.momento .que{font-weight:700;font-style:italic;font-size:13px}
+.momento .det{font-size:14px}
+.momento .dueno{font-size:12px;margin-top:auto}
+.m-producto{background:var(--white);color:var(--navy)}
+.m-tecno{background:var(--navy);color:var(--cream)}
+.m-tecno .num,.m-tecno .dueno{color:var(--lime)}
+.trazo{width:100%;height:auto}
+.carta{background:var(--slate);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px;line-height:1.45}
+.carta .t{font-weight:700;font-size:16px}
+.carta ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px 24px;font-size:14px}
+.carta li::before{content:"• "}
+
+/* ── cuatro columnas de color ── */
+.seccion{display:flex;flex-direction:column;gap:20px}
+.cuatro{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.col{border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:8px;line-height:1.45}
+.col .quien{font-weight:700;font-size:18px}
+.col .riesgo{font-weight:700;font-style:italic;font-size:14px}
+.col .pregunta{font-size:14px}
+.col .cabeza{font-weight:700;font-size:16px}
+.col ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:14px}
+.col li::before{content:"• "}
+.c-producto{background:var(--cream);color:var(--navy)}
+.c-ceo{background:var(--stone);color:var(--navy)}
+.c-tecno{background:var(--navy);color:var(--cream)}
+.c-tecno .riesgo,.c-tecno .cabeza{color:var(--lime)}
+.c-ops{background:var(--lime);color:var(--navy)}
+
+/* ── no hacemos ── */
+.nohacemos{background:var(--stone);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:20px}
+.posiciones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:start}
+.pos{background:var(--page);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:8px;line-height:1.45}
+.pos .p{font-weight:700;font-size:16px}
+.pos .inc{font-size:14px}
+.pos .juega{font-weight:700;font-size:14px}
+
+/* ── números ── */
+.numeros{position:relative;overflow:hidden;background:var(--navy);color:var(--cream);border-radius:16px;padding:32px;min-height:560px}
+.numeros .col-texto{position:relative;z-index:1;width:390px;max-width:100%;display:flex;flex-direction:column;gap:24px}
+.numeros .lista{display:flex;flex-direction:column;gap:24px}
+.cifra{display:flex;flex-direction:column;gap:6px}
+.cifra .n{font-weight:700;font-style:italic;font-size:48px;line-height:1.1;color:var(--lime)}
+.cifra .cap{font-size:14px;line-height:1.45}
+.aro{position:absolute;top:0;bottom:0;right:0;width:44.5%;overflow:hidden;pointer-events:none}
+.aro img{width:100%;height:100%;max-width:none;object-fit:cover;object-position:50% 72%}
+
+/* ── pantallas medianas ── */
+@media (max-width:900px){
+  .cuatro{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .posiciones{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .momentos{flex-wrap:wrap}
+  .momentos .flecha{display:none}
+  .momento{flex:1 1 calc(50% - 4px)}
+  .aro{width:50%;opacity:.45}
+}
+/* ── teléfono ── */
+@media (max-width:640px){
+  .hoja{padding-inline:16px}
+  .cabecera{padding:16px 8px 0}
+  .cargo{position:static;display:block;font-size:20px;margin-top:12px}
+  .atributos{flex-direction:column}
+  .foto{flex-basis:auto;min-height:260px}
+  .jugada{padding:20px}
+  .jugada-cab .separador{display:none}
+  .momento{flex:1 1 100%}
+  .cuatro,.posiciones{grid-template-columns:1fr}
+  .carta ul{grid-template-columns:1fr}
+  .numeros{padding:24px;min-height:0}
+  .aro{display:none}
+  .titulo{font-size:24px}
+}
+</style>
+<style>
+.descarga{display:flex;flex-direction:column;align-items:center;gap:12px;padding:16px 0 32px;text-align:center}
+.boton{text-decoration:none;display:inline-block;font-family:var(--mono);font-weight:700;font-size:16px;color:var(--cream);background:var(--navy);border:1px solid var(--navy);border-radius:99px;padding:14px 28px;cursor:pointer}
+.boton:hover{background:#1a2440;color:var(--lime)}
+.boton:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+.boton[disabled]{opacity:.6;cursor:default}
+.aviso-descarga{font-size:14px;color:var(--navy)}
+</style>
+</head>
+<body>
+<main class="hoja">
+
+  <header class="cabecera">
+    <div class="nombre-bloque">
+      <h1 class="nombre"><span>JOSE</span><span>SANCHEZ</span></h1>
+      <p class="cargo">Líder de Producto y Experiencia</p>
+    </div>
+    <ul class="chips">
+      <li class="chip"><b>Rol: </b>define y diseña los productos</li>
+      <li class="chip"><b>Área: </b>producto y experiencia de usuario</li>
+      <li class="chip"><b>Responde por: </b>valor y experiencia</li>
+    </ul>
+  </header>
+
+  <section class="tarjeta mision" aria-labelledby="t-mision">
+    <img class="icono" src="assets/flag.svg" width="20" height="20" alt="">
+    <h2 class="titulo" id="t-mision" style="margin:0">Misión</h2>
+    <p class="texto">Que cada peso que invertimos en tecnología se convierta en un producto que la gente usa y que hace crecer el negocio.</p>
+  </section>
+
+  <div class="raya" role="presentation"></div>
+
+  <section class="atributos" aria-labelledby="t-atributos">
+    <div class="foto">
+      <img src="assets/balon.png" alt="">
+      <div class="rotulo">
+        <h2 class="titulo" id="t-atributos" style="margin:0">Atributos</h2>
+        <p class="bajada">Lo que hace en su rol</p>
+      </div>
+    </div>
+    <div class="lista-atributos">
+      <div class="atributo"><img class="icono" src="assets/mosaic.svg" width="20" height="20" alt=""><p><b>Estrategia:</b> convierte las prioridades del negocio en proyectos y en una hoja de ruta.</p></div>
+      <div class="atributo"><img class="icono" src="assets/globe.svg" width="20" height="20" alt=""><p><b>Descubrimiento:</b> habla con los usuarios, valida antes de construir y hace benchmarks cuando una decisión los necesita.</p></div>
+      <div class="atributo"><img class="icono" src="assets/artboard.svg" width="20" height="20" alt=""><p><b>Definición y diseño:</b> escribe qué se construye y por qué, y lo diseña y prototipa en Figma.</p></div>
+      <div class="atributo"><img class="icono" src="assets/check.svg" width="20" height="20" alt=""><p><b>Validación:</b> revisa lo construido contra lo prometido, antes de cerrarlo.</p></div>
+    </div>
+  </section>
+
+  <section class="jugada" aria-labelledby="t-jugada">
+    <div class="jugada-cab">
+      <h2 class="titulo" id="t-jugada" style="margin:0">La jugada</h2>
+      <span class="separador" aria-hidden="true"></span>
+      <p class="bajada">Cómo entrega a tecnología</p>
+    </div>
+    <p class="intro">Producto entiende el problema, define el proyecto completo y se lo entrega a tecnología para que lo construya.</p>
+    <ol class="momentos" style="list-style:none;margin:0;padding:0">
+      <li class="momento m-producto">
+        <p class="num">01</p><p class="nombre-m">Arma la jugada</p><p class="que">Define el proyecto</p>
+        <p class="det">En cada cool-down entrega cada proyecto definido. Es su carta al niño Dios.</p>
+        <p class="dueno">Producto</p>
+      </li>
+      <li class="flecha" aria-hidden="true"><img src="assets/arrow-right.svg" width="28" height="28" alt=""></li>
+      <li class="momento m-tecno">
+        <p class="num">02</p><p class="nombre-m">El pase</p><p class="que">Tecnología planea y pone fecha</p>
+        <p class="det">En la planeación, tecnología recibe y responde con el plan de desarrollo y la fecha en que queda todo funcional.</p>
+        <p class="dueno">Tecnología</p>
+      </li>
+      <li class="flecha" aria-hidden="true"><img src="assets/arrow-right.svg" width="28" height="28" alt=""></li>
+      <li class="momento m-tecno">
+        <p class="num">03</p><p class="nombre-m">El juego</p><p class="que">Tecnología construye</p>
+        <p class="det">Durante el sprint, responde el mismo día las dudas de diseño y de uso. Lo demás lo resuelve tecnología.</p>
+        <p class="dueno">Tecnología</p>
+      </li>
+      <li class="flecha" aria-hidden="true"><img src="assets/arrow-right.svg" width="28" height="28" alt=""></li>
+      <li class="momento m-producto">
+        <p class="num">04</p><p class="nombre-m">Fin del partido</p><p class="que">Valida y cierra</p>
+        <p class="det">Valida lo construido contra la jugada. Si cumple, se cierra.</p>
+        <p class="dueno">Producto</p>
+      </li>
+    </ol>
+    <img class="trazo" src="assets/line-h.svg" width="906" height="7" alt="">
+    <div class="carta">
+      <p class="t">Lo que lleva cada jugada</p>
+      <ul>
+        <li>El problema y a quién le duele</li>
+        <li>Qué queda por fuera</li>
+        <li>El objetivo y el indicador que debe mover</li>
+        <li>Criterios de aceptación</li>
+        <li>Qué significa terminado</li>
+        <li>Diseño y prototipo</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tarjeta seccion" aria-labelledby="t-pos">
+    <div>
+      <h2 class="titulo" id="t-pos" style="margin:0 0 20px">Posiciones</h2>
+      <p class="bajada">Quién responde por cada riesgo del producto</p>
+    </div>
+    <div class="cuatro">
+      <div class="col c-producto"><img class="icono" src="assets/compasses.svg" width="20" height="20" alt=""><p class="quien">Producto</p><p class="riesgo">Valor y experiencia</p><p class="pregunta">¿Lo van a usar? ¿Lo entienden sin ayuda?</p></div>
+      <div class="col c-ceo"><img class="icono" src="assets/funds.svg" width="20" height="20" alt=""><p class="quien">CEO</p><p class="riesgo">Viabilidad</p><p class="pregunta">¿Le sirve al negocio? ¿Cuadran los números?</p></div>
+      <div class="col c-tecno"><img class="icono" src="assets/cpu.svg" width="20" height="20" alt=""><p class="quien">Tecnología</p><p class="riesgo">Factibilidad</p><p class="pregunta">¿Se puede construir, con qué y en cuánto tiempo?</p></div>
+      <div class="col c-ops"><img class="icono" src="assets/car.svg" width="20" height="20" alt=""><p class="quien">Operaciones</p><p class="riesgo">Realidad operativa</p><p class="pregunta">¿Funciona en el día a día? ¿Los datos de rutas, capacidad y costos están bien?</p></div>
+    </div>
+  </section>
+
+  <section class="tarjeta seccion" aria-labelledby="t-dec">
+    <h2 class="titulo" id="t-dec" style="margin:0">Quién decide qué</h2>
+    <div class="cuatro">
+      <div class="col c-producto"><p class="cabeza">Decide producto</p><ul><li>Cómo se ve y cómo funciona</li><li>Qué entra y qué queda fuera de un proyecto, dentro de la prioridad acordada</li><li>Si lo construido cumple</li></ul></div>
+      <div class="col c-ceo"><p class="cabeza">Propone producto, decide el CEO</p><ul><li>El orden de la hoja de ruta</li><li>Los precios</li><li>Las apuestas de negocio</li></ul></div>
+      <div class="col c-tecno"><p class="cabeza">Decide tecnología</p><ul><li>Cómo se construye</li><li>El plan y la fecha</li><li>Quién hace qué y el seguimiento del sprint</li></ul></div>
+      <div class="col c-ops"><p class="cabeza">Decide operaciones</p><ul><li>Los datos de la operación: rutas, capacidad y costos de proveedores</li><li>Cómo se hace el trabajo hoy</li></ul></div>
+    </div>
+  </section>
+
+  <section class="nohacemos" aria-labelledby="t-no">
+    <div>
+      <h2 class="titulo" id="t-no" style="margin:0 0 20px">No hacemos</h2>
+      <p class="bajada">Lo que no le corresponde al rol, y quién lo hace</p>
+    </div>
+    <div class="posiciones">
+      <div class="pos"><p class="p">Gestor de proyecto de TI</p><p class="inc">Plan de desarrollo por fases, cronograma y fechas</p><p class="juega">→ Líder de ingeniería</p></div>
+      <div class="pos"><p class="p">Scrum master</p><p class="inc">Asignar tareas, seguir el sprint, destrabar revisiones y ordenar Linear</p><p class="juega">→ Líder de ingeniería</p></div>
+      <div class="pos"><p class="p">Analista técnico</p><p class="inc">Integraciones, datos y cómo se resuelve cada criterio</p><p class="juega">→ Equipo de desarrollo</p></div>
+      <div class="pos"><p class="p">QA y triage</p><p class="inc">Responder por los bugs. Producto los reporta con su criterio</p><p class="juega">→ Líder de ingeniería y equipo de desarrollo</p></div>
+      <div class="pos"><p class="p">Analista de precios</p><p class="inc">Fórmulas, tarifas, cálculos y referente de precios</p><p class="juega">→ CEO y Director financiero</p></div>
+      <div class="pos"><p class="p">Soporte operativo</p><p class="inc">Accesos, listas y seguimiento de cotizaciones</p><p class="juega">→ El área dueña de cada tarea</p></div>
+    </div>
+  </section>
+
+  <section class="numeros" aria-labelledby="t-num">
+    <div class="col-texto">
+      <div>
+        <h2 class="titulo" id="t-num" style="margin:0 0 24px">Números por sprint</h2>
+        <p class="bajada">Lo que se compromete a entregar en cada sprint</p>
+      </div>
+      <div class="lista">
+        <div class="cifra"><p class="n">4</p><p class="cap">asistencias: proyectos listos por planeación, uno por desarrollador</p></div>
+        <div class="cifra"><p class="n">Mismo día</p><p class="cap">respuesta a cada duda de diseño y de uso</p></div>
+        <div class="cifra"><p class="n">100%</p><p class="cap">de lo construido, validado contra la jugada antes de cerrarse</p></div>
+      </div>
+    </div>
+    <div class="aro" aria-hidden="true"><img src="assets/aro.jpg" alt=""></div>
+  </section>
+
+
+  <div class="descarga">
+    <a class="boton" href="rol-lider-de-producto-y-experiencia.md" download>Descargar en Markdown</a>
+  </div>
+</main>
+</body>
+</html>
