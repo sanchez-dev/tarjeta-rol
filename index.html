@@ -109,8 +109,10 @@ p{margin:0}
 .pos .juega{font-weight:700;font-size:14px}
 
 /* ── números ── */
-.numeros{position:relative;overflow:hidden;background:var(--navy);color:var(--cream);border-radius:16px;padding:32px;min-height:560px}
-.numeros .col-texto{position:relative;z-index:1;width:390px;max-width:100%;display:flex;flex-direction:column;gap:24px}
+.numeros{position:relative;overflow:hidden;background:var(--navy);color:var(--cream);border-radius:16px;padding:32px}
+.numeros .col-texto{position:relative;z-index:1;width:390px;max-width:100%;gap:24px}
+.numeros > summary{position:relative;z-index:1}
+.numeros > summary .sum-txt{max-width:390px}
 .numeros .lista{display:flex;flex-direction:column;gap:24px}
 .cifra{display:flex;flex-direction:column;gap:6px}
 .cifra .n{font-weight:700;font-style:italic;font-size:48px;line-height:1.1;color:var(--lime)}
@@ -139,10 +141,25 @@ p{margin:0}
   .momento{flex:1 1 100%}
   .cuatro,.posiciones{grid-template-columns:1fr}
   .carta ul{grid-template-columns:1fr}
-  .numeros{padding:24px;min-height:0}
+  .numeros{padding:24px}
+  .numeros[open]{min-height:0}
   .aro{display:none}
   .titulo{font-size:24px}
 }
+
+/* ── secciones plegables ── */
+.plegable > summary{list-style:none;cursor:pointer;display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.plegable > summary::-webkit-details-marker{display:none}
+.plegable > summary:focus-visible{outline:2px solid currentColor;outline-offset:6px;border-radius:8px}
+.sum-txt{display:flex;flex-direction:column;gap:12px;min-width:0}
+.sum-txt.fila{flex-direction:row;align-items:flex-end;flex-wrap:wrap;gap:16px}
+.chev{flex:0 0 36px;width:36px;height:36px;border-radius:99px;border:1px solid currentColor;display:grid;place-items:center;margin-top:-2px}
+.chev::before{content:"";width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .2s ease}
+.plegable[open] > summary .chev::before{transform:translateY(2px) rotate(-135deg)}
+.cuerpo{display:flex;flex-direction:column;gap:20px;margin-top:20px}
+.numeros:not([open]) .aro{display:none}
+.numeros[open]{min-height:560px}
+@media (prefers-reduced-motion:reduce){.chev::before{transition:none}}
 </style>
 <style>
 .descarga{display:flex;flex-direction:column;align-items:center;gap:12px;padding:16px 0 32px;text-align:center}
@@ -192,12 +209,11 @@ p{margin:0}
     </div>
   </section>
 
-  <section class="jugada" aria-labelledby="t-jugada">
-    <div class="jugada-cab">
+  <details class="jugada plegable" aria-labelledby="t-jugada"><summary><div class="sum-txt fila jugada-cab">
       <h2 class="titulo" id="t-jugada" style="margin:0">La jugada</h2>
       <span class="separador" aria-hidden="true"></span>
       <p class="bajada">Cómo entrega a tecnología</p>
-    </div>
+    </div><span class="chev" aria-hidden="true"></span></summary><div class="cuerpo">
     <p class="intro">Producto entiende el problema, define el proyecto completo y se lo entrega a tecnología para que lo construya.</p>
     <ol class="momentos" style="list-style:none;margin:0;padding:0">
       <li class="momento m-producto">
@@ -236,36 +252,33 @@ p{margin:0}
         <li>Diseño y prototipo</li>
       </ul>
     </div>
-  </section>
+  </div></details>
 
-  <section class="tarjeta seccion" aria-labelledby="t-pos">
-    <div>
-      <h2 class="titulo" id="t-pos" style="margin:0 0 20px">Posiciones</h2>
+  <details class="tarjeta seccion plegable" aria-labelledby="t-pos"><summary><div class="sum-txt">
+      <h2 class="titulo" id="t-pos" style="margin:0">Posiciones</h2>
       <p class="bajada">Quién responde por cada riesgo del producto</p>
-    </div>
+    </div><span class="chev" aria-hidden="true"></span></summary><div class="cuerpo">
     <div class="cuatro">
       <div class="col c-producto"><img class="icono" src="assets/compasses.svg" width="20" height="20" alt=""><p class="quien">Producto</p><p class="riesgo">Valor y experiencia</p><p class="pregunta">¿Lo van a usar? ¿Lo entienden sin ayuda?</p></div>
       <div class="col c-ceo"><img class="icono" src="assets/funds.svg" width="20" height="20" alt=""><p class="quien">CEO</p><p class="riesgo">Viabilidad</p><p class="pregunta">¿Le sirve al negocio? ¿Cuadran los números?</p></div>
       <div class="col c-tecno"><img class="icono" src="assets/cpu.svg" width="20" height="20" alt=""><p class="quien">Tecnología</p><p class="riesgo">Factibilidad</p><p class="pregunta">¿Se puede construir, con qué y en cuánto tiempo?</p></div>
       <div class="col c-ops"><img class="icono" src="assets/car.svg" width="20" height="20" alt=""><p class="quien">Operaciones</p><p class="riesgo">Realidad operativa</p><p class="pregunta">¿Funciona en el día a día? ¿Los datos de rutas, capacidad y costos están bien?</p></div>
     </div>
-  </section>
+  </div></details>
 
-  <section class="tarjeta seccion" aria-labelledby="t-dec">
-    <h2 class="titulo" id="t-dec" style="margin:0">Quién decide qué</h2>
+  <details class="tarjeta seccion plegable" aria-labelledby="t-dec"><summary><div class="sum-txt"><h2 class="titulo" id="t-dec" style="margin:0">Quién decide qué</h2></div><span class="chev" aria-hidden="true"></span></summary><div class="cuerpo">
     <div class="cuatro">
       <div class="col c-producto"><p class="cabeza">Decide producto</p><ul><li>Cómo se ve y cómo funciona</li><li>Qué entra y qué queda fuera de un proyecto, dentro de la prioridad acordada</li><li>Si lo construido cumple</li></ul></div>
       <div class="col c-ceo"><p class="cabeza">Propone producto, decide el CEO</p><ul><li>El orden de la hoja de ruta</li><li>Los precios</li><li>Las apuestas de negocio</li></ul></div>
       <div class="col c-tecno"><p class="cabeza">Decide tecnología</p><ul><li>Cómo se construye</li><li>El plan y la fecha</li><li>Quién hace qué y el seguimiento del sprint</li></ul></div>
       <div class="col c-ops"><p class="cabeza">Decide operaciones</p><ul><li>Los datos de la operación: rutas, capacidad y costos de proveedores</li><li>Cómo se hace el trabajo hoy</li></ul></div>
     </div>
-  </section>
+  </div></details>
 
-  <section class="nohacemos" aria-labelledby="t-no">
-    <div>
-      <h2 class="titulo" id="t-no" style="margin:0 0 20px">No hacemos</h2>
+  <details class="nohacemos plegable" aria-labelledby="t-no"><summary><div class="sum-txt">
+      <h2 class="titulo" id="t-no" style="margin:0">No hacemos</h2>
       <p class="bajada">Lo que no le corresponde al rol, y quién lo hace</p>
-    </div>
+    </div><span class="chev" aria-hidden="true"></span></summary><div class="cuerpo">
     <div class="posiciones">
       <div class="pos"><p class="p">Gestor de proyecto de TI</p><p class="inc">Plan de desarrollo por fases, cronograma y fechas</p><p class="juega">→ Líder de ingeniería</p></div>
       <div class="pos"><p class="p">Scrum master</p><p class="inc">Asignar tareas, seguir el sprint, destrabar revisiones y ordenar Linear</p><p class="juega">→ Líder de ingeniería</p></div>
@@ -274,22 +287,18 @@ p{margin:0}
       <div class="pos"><p class="p">Analista de precios</p><p class="inc">Fórmulas, tarifas, cálculos y referente de precios</p><p class="juega">→ CEO y Director financiero</p></div>
       <div class="pos"><p class="p">Soporte operativo</p><p class="inc">Accesos, listas y seguimiento de cotizaciones</p><p class="juega">→ El área dueña de cada tarea</p></div>
     </div>
-  </section>
+  </div></details>
 
-  <section class="numeros" aria-labelledby="t-num">
-    <div class="col-texto">
-      <div>
-        <h2 class="titulo" id="t-num" style="margin:0 0 24px">Números por sprint</h2>
+  <details class="numeros plegable" aria-labelledby="t-num"><summary><div class="sum-txt">
+        <h2 class="titulo" id="t-num" style="margin:0">Números por sprint</h2>
         <p class="bajada">Lo que se compromete a entregar en cada sprint</p>
-      </div>
-      <div class="lista">
+      </div><span class="chev" aria-hidden="true"></span></summary><div class="col-texto cuerpo"><div class="lista">
         <div class="cifra"><p class="n">4</p><p class="cap">asistencias: proyectos listos por planeación, uno por desarrollador</p></div>
         <div class="cifra"><p class="n">Mismo día</p><p class="cap">respuesta a cada duda de diseño y de uso</p></div>
         <div class="cifra"><p class="n">100%</p><p class="cap">de lo construido, validado contra la jugada antes de cerrarse</p></div>
       </div>
-    </div>
-    <div class="aro" aria-hidden="true"><img src="assets/aro.jpg" alt=""></div>
-  </section>
+    </div><div class="aro" aria-hidden="true"><img src="assets/aro.jpg" alt=""></div>
+  </details>
 
 
   <div class="descarga">
